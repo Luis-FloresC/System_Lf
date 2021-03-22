@@ -41,39 +41,24 @@ namespace System_Lf
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-
-            if (txtuser.Text != "Usuario")
-            {
-                if (txtpass.Password != "Contraseña")
-                {
-                    Usuarios user = new Usuarios();
-                    var validLogin = user.login_user(txtuser.Text, txtpass.Password);
-                    if (validLogin == true && txtuser.Text == Cache_Usuario.Usuario && txtpass.Password == Cache_Usuario.Contra)
-                    {
-
-                        MessageBox.Show("Bienvenido!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario Incorrecto o Contraseña\nIntente de nuevo");
-                    
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Por Favor Ingrese su Contraseña");
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Por Favor Ingrese su Usuario");
-            }
+              Usuarios user = new Usuarios();
+              var validLogin = user.login_user(txtuser.Text, txtpass.Password);
+              if (validLogin == true && txtuser.Text == Cache_Usuario.Usuario && txtpass.Password == Cache_Usuario.Contra)
+                 {
+                   MessageBox.Show(string.Format("Bienvenido al sistema! {0},{1}",Cache_Usuario.Nombre,Cache_Usuario.Apellido));
+                 }
+              else
+                 {
+                   MessageBox.Show("Usuario Incorrecto o Contraseña\nIntente de nuevo","Advertencia",MessageBoxButton.OK,MessageBoxImage.Warning); 
+                 }   
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
-
+            if(MessageBox.Show("Esta seguro que desea Salir?","Advertencia",MessageBoxButton.YesNo,MessageBoxImage.Question) == MessageBoxResult.Yes)
+             {
+                this.Close();
+             }
         }
     }
 }
