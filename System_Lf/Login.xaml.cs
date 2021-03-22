@@ -24,5 +24,29 @@ namespace System_Lf
         {
             InitializeComponent();
         }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                DragMove();
+
+            }
+            catch (Exception)
+            {
+
+               
+            }
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
