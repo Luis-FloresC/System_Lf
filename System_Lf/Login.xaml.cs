@@ -45,7 +45,10 @@ namespace System_Lf
               var validLogin = user.login_user(txtuser.Text, txtpass.Password);
               if (validLogin == true && txtuser.Text == Cache_Usuario.Usuario && txtpass.Password == Cache_Usuario.Contra)
                  {
-                   MessageBox.Show(string.Format("Bienvenido al sistema! {0},{1}",Cache_Usuario.Nombre,Cache_Usuario.Apellido));
+                    MessageBox.Show(string.Format("Bienvenido al sistema! {0},{1}",Cache_Usuario.Nombre,Cache_Usuario.Apellido));
+                    Menu_Principal menu_Principal = new Menu_Principal();
+                    menu_Principal.Show();
+                    this.Close();
                  }
               else
                  {
