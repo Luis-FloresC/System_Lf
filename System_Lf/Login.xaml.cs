@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace System_Lf
 {
     /// <summary>
@@ -41,6 +42,7 @@ namespace System_Lf
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+          
               Usuarios user = new Usuarios();
               var validLogin = user.login_user(txtuser.Text, txtpass.Password);
               if (validLogin == true && txtuser.Text == Cache_Usuario.Usuario && txtpass.Password == Cache_Usuario.Contra)
